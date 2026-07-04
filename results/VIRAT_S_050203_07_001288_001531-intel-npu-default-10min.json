@@ -1,0 +1,228 @@
+{
+  "backend": {
+    "async_requests": 1,
+    "input_dtype": "<Type: 'uint8_t'>",
+    "input_name": "input",
+    "input_shape": [
+      1,
+      3,
+      320,
+      320
+    ],
+    "layout": "nchw",
+    "ov_properties": {},
+    "reader_queue": 0,
+    "requested": "openvino-npu",
+    "selected": "openvino:NPU"
+  },
+  "cpu": {
+    "available": true,
+    "average": {
+      "ffmpeg_percent": 118.966,
+      "process_percent": 129.385,
+      "python_percent": 10.42,
+      "rss_mb": 430.988,
+      "system_percent": 16.518,
+      "tracked_processes": 2.0
+    },
+    "max": {
+      "ffmpeg_percent": 145.8,
+      "process_percent": 157.8,
+      "python_percent": 18.0,
+      "rss_mb": 439.707,
+      "system_percent": 26.0,
+      "tracked_processes": 2.0
+    },
+    "samples": 1201
+  },
+  "decoder": {
+    "command": [
+      "ffmpeg",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-stream_loop",
+      "10",
+      "-hwaccel",
+      "vaapi",
+      "-hwaccel_device",
+      "/dev/dri/renderD128",
+      "-i",
+      "/videos/VIRAT_S_050203_07_001288_001531.mp4",
+      "-an",
+      "-vf",
+      "scale=320:320,format=bgr24",
+      "-pix_fmt",
+      "bgr24",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "ffmpeg_args": [
+      "-hwaccel",
+      "vaapi",
+      "-hwaccel_device",
+      "/dev/dri/renderD128"
+    ],
+    "ffmpeg_returncode": 0,
+    "ffmpeg_stderr": "",
+    "output_pixel_format": "bgr24",
+    "pipeline": "baseline",
+    "requested": "vaapi",
+    "selected": "vaapi"
+  },
+  "detections_by_label": {
+    "car": 1240338,
+    "motorcycle": 143,
+    "person": 16698,
+    "traffic light": 44,
+    "truck": 64955
+  },
+  "end_to_end_fps": 133.193,
+  "frames": 80091,
+  "frames_by_detection_count": {
+    "12": 517,
+    "13": 3003,
+    "14": 7568,
+    "15": 12683,
+    "16": 16005,
+    "17": 14795,
+    "18": 14366,
+    "19": 8525,
+    "20": 2629
+  },
+  "inference_fps": 144.448,
+  "labels": "/app/labels/coco-80.txt",
+  "latency_ms": {
+    "histogram": {
+      "0.0-4.0": 0,
+      "10.0-12.0": 13,
+      "12.0-16.0": 1,
+      "16.0-24.0": 0,
+      "4.0-5.0": 0,
+      "5.0-6.0": 91,
+      "6.0-7.0": 44840,
+      "7.0-8.0": 34994,
+      "8.0-10.0": 152,
+      ">24.0": 0
+    },
+    "max": 12.065,
+    "mean": 6.923,
+    "min": 5.937,
+    "p01": 6.062,
+    "p05": 6.177,
+    "p10": 6.305,
+    "p25": 6.589,
+    "p50": 6.919,
+    "p75": 7.26,
+    "p90": 7.463,
+    "p95": 7.672,
+    "p99": 7.862
+  },
+  "loops": 11,
+  "model": "/app/models/yolo_nas_s.onnx",
+  "nvidia": {
+    "available": false,
+    "samples": 0
+  },
+  "probe": {
+    "format": {
+      "duration": "242.942700",
+      "size": "310856100"
+    },
+    "programs": [],
+    "streams": [
+      {
+        "avg_frame_rate": "30000/1001",
+        "codec_name": "h264",
+        "height": 1080,
+        "pix_fmt": "yuv420p",
+        "width": 1920
+      }
+    ]
+  },
+  "rapl": {
+    "available": true,
+    "average_w": {
+      "intel-rapl-mmio:0": {
+        "name": "package-0",
+        "watts": 7.151802
+      },
+      "intel-rapl-mmio:0:0": {
+        "name": "dram",
+        "watts": 0.222624
+      },
+      "intel-rapl:0": {
+        "name": "package-0",
+        "watts": 7.151802
+      },
+      "intel-rapl:0:0": {
+        "name": "core",
+        "watts": 0.992237
+      },
+      "intel-rapl:0:1": {
+        "name": "uncore",
+        "watts": 0.013256
+      },
+      "intel-rapl:0:2": {
+        "name": "dram",
+        "watts": 0.222624
+      }
+    }
+  },
+  "step_latency_ms": {
+    "frame_total": {
+      "count": 80091,
+      "max": 228.143,
+      "mean": 7.507,
+      "min": 6.18,
+      "p50": 7.491,
+      "p95": 8.585,
+      "p99": 8.853,
+      "total_ms": 601226.637
+    },
+    "infer": {
+      "count": 80091,
+      "max": 12.065,
+      "mean": 6.923,
+      "min": 5.937,
+      "p50": 6.919,
+      "p95": 7.672,
+      "p99": 7.862,
+      "total_ms": 554462.378
+    },
+    "parse": {
+      "count": 80091,
+      "max": 0.86,
+      "mean": 0.072,
+      "min": 0.016,
+      "p50": 0.061,
+      "p95": 0.163,
+      "p99": 0.189,
+      "total_ms": 5770.738
+    },
+    "prepare": {
+      "count": 80091,
+      "max": 1.541,
+      "mean": 0.266,
+      "min": 0.077,
+      "p50": 0.266,
+      "p95": 0.422,
+      "p99": 0.467,
+      "total_ms": 21325.433
+    },
+    "read": {
+      "count": 80092,
+      "max": 218.252,
+      "mean": 0.234,
+      "min": 0.074,
+      "p50": 0.212,
+      "p95": 0.348,
+      "p99": 0.751,
+      "total_ms": 18706.631
+    }
+  },
+  "threshold": 0.3,
+  "video": "/videos/VIRAT_S_050203_07_001288_001531.mp4",
+  "wall_seconds": 601.316605
+}

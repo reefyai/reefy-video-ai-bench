@@ -1,0 +1,21 @@
+[project]
+name = "reefy-video-ai-bench"
+version = "0.1.0"
+description = "Maximum-throughput video AI benchmark for decode, preprocessing, object detection, and power"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26",
+  "psutil>=5.9",
+]
+
+[project.optional-dependencies]
+nvidia = ["onnxruntime-gpu==1.22.0"]
+intel = ["openvino==2025.3.0"]
+
+[project.scripts]
+raw-video-detector-bench = "raw_video_detector_bench.bench:main"
+reefy-video-ai-bench = "raw_video_detector_bench.bench:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
