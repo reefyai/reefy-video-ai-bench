@@ -11,6 +11,22 @@ while the Intel NPU delivered 11.1x better FPS/W. This makes the Intel NPU the
 best fit among the tested devices for power-efficient AI applications that
 target video understanding.
 
+## Benchmark Task
+
+The benchmark takes raw camera video frames and runs object detection on them.
+
+<a href="docs/images/virat-frame-101s.jpg">
+  <img src="docs/images/virat-frame-101s.jpg" alt="Source VIRAT camera frame" width="360">
+</a>
+
+<p><strong>Source video frame.</strong></p>
+
+<a href="docs/images/virat-frame-101s-intel-npu-detections.jpg">
+  <img src="docs/images/virat-frame-101s-intel-npu-detections.jpg" alt="VIRAT camera frame with Intel NPU detection boxes" width="360">
+</a>
+
+<p><strong>Object detections produced by the YOLO-NAS model.</strong></p>
+
 ## Core Pipeline
 
 1. Decode a video file as fast as possible.
