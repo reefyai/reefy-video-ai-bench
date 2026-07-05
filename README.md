@@ -122,17 +122,17 @@ Wall power was measured with plug-in wall meters while no unrelated payloads
 were running. The idle readings below are the baselines used for FPS/W
 calculations.
 
-Intel Core Ultra system idle baseline, 4.3 W:
-
 <a href="docs/images/intel-core-ultra-wall-meter-idle.jpeg">
   <img src="docs/images/intel-core-ultra-wall-meter-idle.jpeg" alt="Intel Core Ultra system wall meter idle reading" width="360">
 </a>
 
-Nvidia RTX 5060 Ti system idle baseline, 48.2 W:
+<p><strong>Intel Core Ultra system idle baseline:</strong> 4.3 W.</p>
 
 <a href="docs/images/nvidia-rtx5060ti-wall-meter-idle.jpeg">
   <img src="docs/images/nvidia-rtx5060ti-wall-meter-idle.jpeg" alt="Nvidia RTX 5060 Ti system wall meter idle reading" width="360">
 </a>
+
+<p><strong>Nvidia RTX 5060 Ti system idle baseline:</strong> 48.2 W.</p>
 
 ## Pipelines And How To Run
 
@@ -288,13 +288,19 @@ temperatures, and fans.
   <img src="docs/images/metrics/rtx5060ti-power.png" alt="RTX 5060 Ti power during benchmark" width="720">
 </a>
 
+<p><strong>Software-reported power consumption.</strong></p>
+
 <a href="docs/images/metrics/rtx5060ti-utilization.png">
   <img src="docs/images/metrics/rtx5060ti-utilization.png" alt="RTX 5060 Ti utilization during benchmark" width="720">
 </a>
 
+<p><strong>GPU utilization.</strong></p>
+
 <a href="docs/images/metrics/rtx5060ti-temp.png">
   <img src="docs/images/metrics/rtx5060ti-temp.png" alt="RTX 5060 Ti temperature during benchmark" width="720">
 </a>
+
+<p><strong>Temperature.</strong></p>
 
 #### Intel Core Ultra iGPU
 
@@ -302,13 +308,19 @@ temperatures, and fans.
   <img src="docs/images/metrics/igpu-power.png" alt="Intel Core Ultra iGPU power during benchmark" width="720">
 </a>
 
+<p><strong>Software-reported power consumption.</strong></p>
+
 <a href="docs/images/metrics/igpu-utilization.png">
   <img src="docs/images/metrics/igpu-utilization.png" alt="Intel Core Ultra iGPU utilization during benchmark" width="720">
 </a>
 
+<p><strong>GPU utilization.</strong></p>
+
 <a href="docs/images/metrics/igpu-temp.png">
   <img src="docs/images/metrics/igpu-temp.png" alt="Intel Core Ultra iGPU temperature during benchmark" width="720">
 </a>
+
+<p><strong>Temperature.</strong></p>
 
 #### Intel Core Ultra NPU
 
@@ -316,13 +328,19 @@ temperatures, and fans.
   <img src="docs/images/metrics/npu-power.png" alt="Intel Core Ultra NPU power during benchmark" width="720">
 </a>
 
+<p><strong>Software-reported power consumption.</strong></p>
+
 <a href="docs/images/metrics/npu-gpu-utilization.png">
   <img src="docs/images/metrics/npu-gpu-utilization.png" alt="Intel Core Ultra accelerator utilization during NPU benchmark" width="720">
 </a>
 
+<p><strong>Accelerator utilization.</strong></p>
+
 <a href="docs/images/metrics/npu-temp.png">
   <img src="docs/images/metrics/npu-temp.png" alt="Intel Core Ultra NPU temperature during benchmark" width="720">
 </a>
+
+<p><strong>Temperature.</strong></p>
 
 ### Detection Counts
 
@@ -348,11 +366,22 @@ frames: 80,091
 cars per frame: 1,240,338 / 80,091 = 15.49
 ```
 
-Representative frame from 120 seconds into the clip:
+Representative frame from 101 seconds into the clip:
 
-<a href="docs/images/virat-frame-120s.jpg">
-  <img src="docs/images/virat-frame-120s.jpg" alt="Representative VIRAT parking-lot frame" width="360">
+<a href="docs/images/virat-frame-101s.jpg">
+  <img src="docs/images/virat-frame-101s.jpg" alt="Representative VIRAT parking-lot frame" width="360">
 </a>
+
+<p><strong>Raw representative frame.</strong></p>
+
+We also added boxes from the Intel NPU run to sanity-check that the reported
+detections line up with visible people and vehicles in the scene.
+
+<a href="docs/images/virat-frame-101s-intel-npu-detections.jpg">
+  <img src="docs/images/virat-frame-101s-intel-npu-detections.jpg" alt="Representative VIRAT parking-lot frame with Intel NPU detection boxes" width="360">
+</a>
+
+<p><strong>Intel NPU detections at 101 seconds:</strong> 14 cars, 1 person, and 1 truck.</p>
 
 Visually, this frame contains roughly 25-30 visible vehicles, but many are
 small, partially occluded, at the image edge, under trees, or classified as
